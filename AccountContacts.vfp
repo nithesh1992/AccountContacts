@@ -1,4 +1,4 @@
-<apex:page controller="AccountContactsController" tabstyle="Account" s>
+<apex:page controller="AccountContactsController" tabstyle="Account">
    
     <apex:form>
         <apex:pageBlock mode="edit">
