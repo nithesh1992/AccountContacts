@@ -1,0 +1,21 @@
+public class AccountContactsController {
+    
+    public ID selectedAccountId {get;set;}
+    public List<Contact> conlist {get;set;}  
+    
+    public List<SelectOption> getAccountNames(){
+        List<SelectOption> accOptions= new List<SelectOption>();
+        system.debug(selectedAccountId);
+        accOptions.add( new SelectOption('','--Select--'));
+        for(Account acc :[select Id, Name from Account ]){
+            accOptions.add(new SelectOption(acc.Id,acc.Name));
+        }
+        return accOptions;
+    }    
+    
+    public PageReference showContacts(){        
+       conlist=[select LastName,phone from Contact where Accountid = :selectedAccountId];
+       return null;
+    }
+    
+}
