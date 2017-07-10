@@ -1,5 +1,5 @@
-<apex:page controller="AccountContactsController" tabstyle="Account" standardStylesheets="false">
-    <apex:stylesheet value="{!URLFOR($Resource.bulma, 'css/bulma.css')}" />
+<apex:page controller="AccountContactsController" tabstyle="Account" s>
+   
     <apex:form>
         <apex:pageBlock mode="edit">
             <apex:pageMessages />
