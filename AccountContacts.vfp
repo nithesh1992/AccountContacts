@@ -1,0 +1,18 @@
+<apex:page controller="AccountContactsController" tabstyle="Account" standardStylesheets="false">
+    <apex:stylesheet value="{!URLFOR($Resource.bulma, 'css/bulma.css')}" />
+    <apex:form>
+        <apex:pageBlock mode="edit">
+            <apex:pageMessages />
+            <apex:selectList value="{!selectedAccountId}" size="1" styleClass="select">
+                <apex:selectOptions value="{!AccountNames}"/>
+                <apex:actionSupport event="onchange" action="{!showContacts}" reRender="contacts" />
+            </apex:selectList>	
+            <div>               
+                <apex:pageblockTable title="Contacts" value="{!conlist}" var="c" id="contacts" styleClass="table is-striped">
+                    <apex:column value="{!c.LastName}"/>
+                    <apex:column value="{!c.phone}"/>
+                </apex:pageblockTable>
+            </div>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>
